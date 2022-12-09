@@ -1,0 +1,272 @@
+
+:root {
+    padding:0;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+    --primaryColor: #6B1848;
+}
+
+header {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  margin:0;
+  padding:0;
+  font-family: 'Courier New', Courier, monospace; 
+}
+
+button {
+  cursor: pointer;
+  border:none;
+  font-family:'Courier New', Courier, monospace;
+  letter-spacing: 2px;
+}
+
+button.active {
+  background-color: var(--primaryColor);
+}
+
+/* WEBSITE LAYOUT */
+.row {
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+}
+.column {
+    float:left;
+}
+
+.column.aside {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.column.container {
+  flex: 0 0 70%;
+    max-width: 70%;
+    position: relative;
+    margin: auto;
+  }
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /*box-shadow: 0 5px 2px -2px rgba(0,0,0,.2); */
+    background-color: #F0E8E8;
+    padding: 1rem;
+}
+
+#newFlashcardBtnCon {
+    float: right;
+}
+
+@media screen and (max-width: 600px) {
+    .aside, .container {
+      width: 100%;
+    }
+}
+
+/* WEBSITE LAYOUT END*/
+ 
+  #cardCon {
+    margin-top: 1em;
+  }
+
+  /* TAB AREA */
+.tab {
+  width: 100%;
+  height: 300px;
+}
+
+.tab button {
+    background-color: transparent;
+    padding: 22px 26px;
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: left;
+    font-weight: 600;
+}
+ 
+.tab button:hover {
+    background-color: var(--primaryColor);
+    color:white;
+}
+
+.tab button.active {
+    background-color: var(--primaryColor);
+    color:white;
+}
+
+.tabContent {
+    padding: 0px 10px;
+    width: 100%;
+    display: none;
+    position:absolute;
+    text-align:center;
+    line-height:200px;
+    cursor:pointer;
+  }
+/* TAB AREA END*/
+
+
+/* ADD FLASHCARD */
+.newFlashcardBtnCon {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.newFlashcardBtnCon button {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15pt;
+    background-color: transparent;
+    padding: 0.5em 1em;
+    font-weight: 900;
+    border-radius: 0.4em;
+}
+
+  .newFlashcardBtnCon button:hover {
+    color:white;
+    background-color: var(--primaryColor);
+  }
+  
+  .newCardCon {
+    width: 80vw;
+    max-width: 500px;
+    display: inline-block;
+    background-color: #ffffff;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 3rem 3rem;
+    padding-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  }
+  .newCardCon h2 {
+    font-size: 2.2em;
+    font-weight: 600;
+    text-align: center;
+    padding:1rem;
+  }
+
+  #closeButton {
+    font-size: 30px;
+    background-color: transparent;
+    padding:0;
+    float:right;
+  }
+
+  #save-btn {
+    font-size: 1em;
+    background-color: var(--primaryColor);
+    color: #ffffff;
+    padding: 0.6em 0;
+    border-radius: 0.3em;
+    font-weight: 600;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .errorCon {
+    align-self: center;
+  }
+  #error {
+    color: #ff5353;
+    font-weight: 400;
+  }
+
+  label {
+    font-weight: 600;
+    margin-bottom: 50px;
+  }
+  textarea {
+    width: 100%;
+    padding: 0.7em 0.5em;
+    border: 1px solid #d0d0d0;
+    outline: none;
+    border-radius: 0.3em;
+    resize: none;
+  }
+  textarea:not(:last-child) {
+    margin-bottom: 1.2em;
+  }
+  textarea:focus {
+    border-color: #363d55;
+  }
+
+/* ADD FLASHCARD END*/
+  
+
+/* FLASHCARDS AREA */
+  .edit,
+  .delete {
+    background-color: transparent;
+    padding: 0.5em;
+    font-size: 1.2em;
+  }
+  .edit {
+    color: #587ef4;
+  }
+  .delete {
+    color: #ff5353;
+  }
+  .hide {
+    display: none;
+  }
+ 
+  /* FLASHCARDS END*/
+
+  /* FLIP CARDS FROM W3SCHOOLS */
+.show {
+  display: block;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  padding: 15px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front p, .flip-card-back p {
+  color: black;
+  position:static;
+  margin: 85px;
+}
+
+.flip-card-back {
+  background-color: var(--primaryColor);
+  color: white;
+  transform: rotateY(180deg);
+}

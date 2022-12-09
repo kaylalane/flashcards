@@ -1,0 +1,27 @@
+{"questionlist":[
+    {"cardfront":"CAT",
+    "cardback":"GATO",
+    "subject": "Spanish"
+    },
+    {"cardfront":"DOG",
+    "cardback":"PERRO",
+    "subject": "Spanish"
+    },
+    {"cardfront":"HORSE",
+    "cardback":"CABALLO",
+    "subject": "Spanish"
+    },
+    {"cardfront":"RABBIT",
+    "cardback":"CONEJO",
+    "subject": "Spanish"
+    },
+    {"cardfront":"TIGER",
+    "cardback":"TIGRE",
+    "subject": "Spanish"
+    },
+    {"cardfront":"KANGAROO",
+    "cardback":"CANGURO",
+    "subject": "Spanish"
+    }
+   ]
+}
