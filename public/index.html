@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Welcome to Firebase Hosting</title>
-
+    <link rel="stylesheet" href="style.css">
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/9.15.0/firebase-app-compat.js"></script>
     <!-- include only the Firebase features as you need -->
@@ -38,14 +38,81 @@
       }
     </style>
   </head>
+
+  <header>
+    <nav>
+      <h1 class="title">Lane's Language Learning</h1>
+      <div class="newFlashcardBtnCon">
+          <button id="newFlashcardBtn">Add Flashcard</button>
+      </div>
+  </nav>
+  </header>
+  
   <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+   
+    <div class="row">
+      <section class="aside">
+          <div class="tab" id="tab">
+              <button class="tabLinks active" onclick="filterSelection('all')">All</button>
+              <button class="tabLinks" onclick="filterSelection('spanish')">Spanish</button>
+          </div>
+      </section>
+      
+      <section>
+      <div class="container">
+          
+          <!-- Display Card of Question And Answers Here -->
+        <div id="cardCon">
+
+            <div class="cardsContainer"></div>
+            
+        </div>
+      </div>
+        <!-- Input form for users to fill question and answer -->
+        <div class="newCardCon hide" id="newQuestionCard">
+          <button id="closeButton">&#10008</button>
+          <h2>New Flashcard</h2>
+          <div>
+    
+            <!-- Error message -->
+            <div class="errorCon">
+              <span class="hide" id="error">Input fields cannot be empty!</span>
+            </div>
+            <!-- Close Button -->
+            
+          </div>
+          <form>
+            <!--method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"-->
+            <label for ="subject">Subject:</label>
+            <textarea class="input"
+            id="subject"
+            rows="1"
+            placeholder="Type the subject here..."
+            ></textarea>
+
+            <label for="question">Question:</label>
+            <textarea
+              class="input"
+              id="question"
+              placeholder="Type the question here..."
+              rows="2" 
+            ></textarea>
+
+            <label for="answer">Answer:</label>
+            <textarea
+              class="input"
+              id="answer"
+              rows="4"
+              placeholder="Type the answer here..."
+            ></textarea>
+          </form>
+          <button id="save-btn">Save</button>
+
+        </div>
+      </section>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+        <!-- Script -->
+        <script src="script.js"></script>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
