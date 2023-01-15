@@ -66,7 +66,6 @@ function viewlist() {
     div.classList.add(subject.value);
   }
   
-  
   //add the nesting classes within flip card
   div.innerHTML += '<div class="flip-card-inner"><div class="flip-card-front"><p></p></div><div class="flip-card-back"></div></div>';
   var flipCardFront = div.getElementsByClassName("flip-card-front")[0];
@@ -133,7 +132,6 @@ const disableButtons = (value) => {
   });
   
 };
-
 
 //filter
 filterSelection("all")
