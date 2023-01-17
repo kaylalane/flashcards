@@ -32,6 +32,7 @@ button.active {
 .row {
   display: flex;
   width: 100%;
+  height: 100%;
   gap: 2rem;
 }
 .column {
@@ -44,24 +45,26 @@ button.active {
 }
 
 .column.container {
-  flex: 0 0 70%;
-    max-width: 70%;
+  flex: 0 0 75%;
+    max-width: 75%;
     position: relative;
     margin: auto;
+    display: inline;
   }
 
 nav {
+  color: white;
     display: flex;
     justify-content: space-around;
     align-items: center;
     /*box-shadow: 0 5px 2px -2px rgba(0,0,0,.2); */
-    background-color: #F0E8E8;
+    background-color: black;
     padding: 1rem;
 }
 
-#newFlashcardBtnCon {
-    float: right;
+.title {
 }
+
 
 @media screen and (max-width: 600px) {
     .aside, .container {
@@ -73,6 +76,10 @@ nav {
  
   #cardCon {
     margin-top: 1em;
+  }
+
+  .cardsContainer {
+    display: flex;
   }
 
   /* TAB AREA */
@@ -121,16 +128,16 @@ nav {
     justify-content: flex-end;
 }
 
-.newFlashcardBtnCon button {
+#newFlashcardBtn {
     font-family: 'Courier New', Courier, monospace;
     font-size: 15pt;
-    background-color: transparent;
+    background-color: white;
     padding: 0.5em 1em;
     font-weight: 900;
     border-radius: 0.4em;
 }
 
-  .newFlashcardBtnCon button:hover {
+  #newFlashcardBtn:hover {
     color:white;
     background-color: var(--primaryColor);
   }
